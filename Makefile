@@ -7,8 +7,5 @@ dep_cowboy_commit = 2.9.0
 dep_jsone_commit = master
 dep_homework6 = git https://github.com/ImAvtandil/homework6
 
-LOCAL_DEPS = sync
-dep_sync_commit = master
-
 BUILD_DEPS += relx
 include erlang.mk
