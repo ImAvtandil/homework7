@@ -25,7 +25,9 @@ parse_date(<<?year, ?month1, ?day1, ?h, ?i, ?s, _/binary>>) ->
 parse_date(<<?year, ?month2, ?day1, ?h, ?i, ?s>>) ->
     {{?prepereY, ?prepereM2, ?prepereD1}, {?prepereH, ?prepereI, ?prepereS}};
 parse_date(<<?year, ?month2, ?day2, ?h, ?i, ?s>>) ->
-    {{?prepereY, ?prepereM2, ?prepereD2}, {?prepereH, ?prepereI, ?prepereS}}.
+    {{?prepereY, ?prepereM2, ?prepereD2}, {?prepereH, ?prepereI, ?prepereS}};
+parse_date(<<?year, ?month1, ?day2, ?h, ?i, ?s>>) ->
+    {{?prepereY, ?prepereM1, ?prepereD2}, {?prepereH, ?prepereI, ?prepereS}}.
 
 getTimestamp(DateTime) when is_binary(DateTime) ->
     calendar:datetime_to_gregorian_seconds(parse_date(DateTime));
